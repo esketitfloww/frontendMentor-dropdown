@@ -1,0 +1,324 @@
+html {
+	scroll-behavior: smooth;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #FAFAFA;
+	font-family: 'Bahnschrift';
+}
+
+nav {
+	display: flex;
+	height: 10vh;
+}
+
+.logo {
+	display: flex;
+	background-color: white;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: 0 30px;
+}
+
+.logo img{
+	width: 80px;
+	height: 30px;
+}
+
+.btn {
+	display: flex;
+	flex-direction: column;
+}
+
+.line {
+	float: right;
+	height: 5px;
+  	width: 8vw;
+  	background-color: black;
+  	cursor: pointer;
+  	margin-bottom: 5px;
+}
+
+#cross, #check {
+	display: none;
+}
+
+.nav {
+	position: fixed;
+	background-color: white;
+	right: -100%;
+	padding: 20px;
+	width: 60vw;
+	z-index: 1;
+	transition: all 0.5s ease;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	height: 100vh;
+}
+
+.cross1 {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  padding: 20px 0;
+}
+
+.cross1::before, .cross1::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  background-color: black;
+}
+
+.cross1::before {
+  transform: rotate(45deg);
+}
+
+.cross1::after {
+  transform: rotate(-45deg);
+}
+
+.nav-left ul,.nav-right ul{
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.nav-left a, .nav-right a{
+	text-decoration: none;
+	color: hsl(0, 0%, 41%);
+	font-size: 5vw;
+}
+
+#check:checked ~ .nav {
+	right: 0;
+}
+
+#subMenu, #subMenu2 {
+	display: none;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 20px;
+	padding-left: 10px;
+}
+
+.nav-right {
+	text-align: center;
+}
+.register {
+	border: 2px solid hsl(0, 0%, 41%);
+	border-radius: 10px;
+	padding: 5px 0;
+}
+
+#container {
+	position: absolute;
+	background-color: white;
+	display: flex;
+	flex-direction: column-reverse;
+	height: 90vh;
+}
+
+.content {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 20px;
+	height: 45vh;
+	width: 100vw;
+}
+
+.title {
+	font-weight: 700;
+	font-size: 9vw;
+	text-align: center;
+}
+.desc {
+	color: hsl(0, 0%, 41%);
+	font-size: 4.5vw;
+	text-align: center;
+}
+
+.learn {
+	background-color: black;
+	border-collapse: transparent;
+	border-radius: 10px;
+	width: 30%;
+	color: white;
+	font-weight: 700;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+.client{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 40px;
+}
+
+.client img{
+	width: 50px;
+}
+
+.decor {
+	background-image: url('images/image-hero-mobile.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 43vh;
+	width: 100%;
+}
+
+.attribution {
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	width: 100vw;
+	justify-content: center;
+}
+
+@media (max-width: 375px){
+	#container{
+		height: 100%;
+		width: 100vw;
+		position: relative;
+	}
+	.content {
+		margin-top: 20px;
+	}
+	.learn {
+		width: 50%;
+	}
+	.client {
+		gap: 20px;
+	}
+	.attribution{
+		position: absolute;
+		top: 100%;
+		font-size: 4vw;
+	}
+}
+
+@media (min-width: 768px){
+	.client img{
+		width: 100px;
+	}
+	.learn {
+		width: 50%;
+		font-size: 4vw;
+	}
+}
+
+@media (min-width: 1114px){
+	.btn {
+		display: none;
+	}
+	#crossBtn {
+		display: none;
+	}
+	.logo{
+		width: 10%;
+	}
+	nav {
+		display: flex;
+		align-items: center;
+	}
+	.nav {
+		position: static;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 90%;
+		height: 10vh;
+		padding: 0 20px;
+	}
+	.nav a{
+		font-size: 1.5vw;
+	}
+	.nav-right ul, .nav-left ul{
+		display: flex;
+		flex-direction: row;
+	}
+	.nav-left li{
+		display: flex;
+		flex-direction: row;
+	}
+	.nav-right li{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	.register{
+		padding: 10px 30px;
+	}
+	#featureLink, #companyLink {
+		display: flex;
+		flex-direction: column;
+	}
+	#subMenu, #subMenu2 {
+		background-color: white;
+		margin: 10px 0;
+		padding: 10px;
+		box-shadow: 3px 3px 3px 3px;
+		border-radius: 5px;
+		position: absolute;
+		top: 8%;
+	}
+	#container{
+		display: flex;
+		flex-direction: row;
+	}
+	.decor{
+		background-image: url('images/image-hero-desktop.png');
+		background-size: contain;
+		height: 90%;
+		width: 40vw;
+		margin-left: 10vw;
+	}
+	.content {
+		height: 90%;
+		width: 50vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		gap: 40px;
+		padding-left: auto;
+		padding-top: 100px;
+
+	}
+	.title{
+		font-size: 5vw;
+		text-align: left;
+		width: 62%;
+		
+	}
+	.desc{
+		font-size: 1.5vw;
+		text-align: left;
+		width: 60%;
+	}
+	.learn{
+		font-size: 1.5vw;
+		padding: 10px 20px;
+		margin: 0;
+		width: 30%;
+	}
+	.client{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 40px;
+	}
+}
